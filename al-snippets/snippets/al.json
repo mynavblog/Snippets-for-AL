@@ -157,10 +157,10 @@
         "description": "Snippet: Event Subscriber for Validate Field in Table"
     },
     "Snippet: Event Subscriber for Page": {
-        "prefix": "teventsubpageaction",
+        "prefix": "teventsubpage",
         "body": [
-            "[EventSubscriber(ObjectType::Page, DATABASE::${1:ObjectName}, '${2|OnAfterActionEvent,OnAfterGetCurrRecordEvent,OnAfterGetRecordEvent,OnBeforeActionEvent,OnClosePageEvent,OnOpenPageEvent|}', '', ${3|true,false|}, ${4|true,false|})]",
-            "local procedure RunPage${1:ObjectName}${2:MyProcedure}(VAR Rec: Record ${1:ObjectName})",
+            "[EventSubscriber(ObjectType::Page, PAGE::${1:ObjectName}, '${2|OnAfterActionEvent,OnAfterGetCurrRecordEvent,OnAfterGetRecordEvent,OnBeforeActionEvent,OnClosePageEvent,OnOpenPageEvent|}', '${3:ActionName}', ${4|true,false|}, ${5|true,false|})]",
+            "local procedure RunPage${1:ObjectName}${2:MyProcedure}(VAR Rec: Record ${6:TableName})",
             "begin",
             "\t$0",
             "end;"
