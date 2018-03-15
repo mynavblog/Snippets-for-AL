@@ -1,0 +1,170 @@
+{
+    "Snippet: Trigger OnValidate": {
+        "prefix": "ttriggerOnValidate",
+        "body": [
+            "trigger OnValidate();",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Trigger OnValidate()"
+    },
+    "Snippet: Trigger OnLookup": {
+        "prefix": "ttriggerOnLookup",
+        "body": [
+            "trigger OnLookup();",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Trigger OnLookup()"
+    },
+    "Snippet: If not": {
+        "prefix": "tifnot",
+        "body": [
+            "if not ${1:BooleanExpression} then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If not"
+    },
+    "Snippet: If not Else": {
+        "prefix": "tifnotelse",
+        "body": [
+            "if not ${1:BooleanExpression} then begin",
+            "\t${2}",
+            "end else begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If not Else"
+    },
+    "Snippet: If rec <> xrec": {
+        "prefix": "tifRecxRec",
+        "body": [
+            "if Rec.${1:FieldName} <> xRec.${1:FieldName} then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If Rec.field <> xRec.field"
+    },
+    "Snippet: If rec <> xrec and xrec empty": {
+        "prefix": "tifRecxRecempty",
+        "body": [
+            "if (Rec.${1:FieldName} <> xRec.${1:FieldName}) and (xRec.${1:FieldName} <> '') then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If rec.field <> xrec.field and xrec.field <> ''"
+    },
+    "Snippet: Repeat Until Next": {
+        "prefix": "trepeatnext",
+        "body": [
+            "repeat begin",
+            "\t$0",
+            "end until ${1:RecordName}.Next = 0;"
+        ],
+        "description": "Snippet: Repeat Until Next"
+    },
+    "Snippet: If Table not Empty Else": {
+        "prefix": "tnotisemptyelse",
+        "body": [
+            "if not ${1:Rec}.IsEmpty then begin",
+            "\t${2}",
+            "end else begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If Table not Empty Else"
+    },
+    "Snippet: If Table Empty": {
+        "prefix": "tnotisempty",
+        "body": [
+            "if not ${1:Rec}.IsEmpty then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If Table not Empty"
+    },
+    "Snippet: Flowfield": {
+        "prefix": "tflowfield",
+        "body": [
+            "field(${1:id}; ${2:MyField}; ${3:Type})",
+            "{",
+            "\tCaption = '${2:Myfield}';",
+            "\tFieldClass = FlowField;",
+            "\tCalcFormula = ${4|sum,avarage,exist,count,min,max,lookup|}(${5:TableName}.${6:FieldName} WHERE (${7:WhereStatement}));",
+            "\tEditable = false;",
+            "\t$0",
+            "}"
+        ],
+        "description": "Snippet: FlowField"
+    },
+    "Snippet: Field Code with Table relation": {
+        "prefix": "tfieldcodetabrel",
+        "body": [
+            "field(${1:id}; ${2:MyField}; Code[${3:10}])",
+            "{",
+            "\tCaption = '${2:Myfield}';",
+            "\tTableRelation = ${4:TableRelation};",
+            "\t$0",
+            "}"
+        ],
+        "description": "Snippet: Field type Code with table relation"
+    },
+    "Snippet: Field Page with ToolTip": {
+        "prefix": "tfieldpagetooltip",
+        "body": [
+            "field(${1:Myfield})",
+            "{",
+            "\tToolTip = '${2:ToolTipText}';",
+            "\t$0",
+            "}"
+        ],
+        "description": "Snippet: Field on Page with ToolTip"
+    },
+    "Snippet: Event Subscriber for Table InsDel": {
+        "prefix": "teventsubtableinsdel",
+        "body": [
+            "[EventSubscriber(ObjectType::Table, DATABASE::${1:ObjectName}, '${2|OnAfterDeleteEvent,OnAfterInsertEvent,OnBeforeDeleteEvent,OnBeforeInsertEvent|}', '', ${3|true,false|}, ${4|true,false|})]",
+            "local procedure RunTable${1:ObjectName}${2:MyProcedure}(VAR Rec: Record ${1:ObjectName}; RunTrigger: Boolean)",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Event Subscriber for Table (insert or delete)"
+    },
+    "Snippet: Event Subscriber for Table ModRen": {
+        "prefix": "teventsubtablemodren",
+        "body": [
+            "[EventSubscriber(ObjectType::Table, DATABASE::${1:ObjectName}, '${2|OnAfterModifyEvent,OnAfterRenameEvent,OnBeforeModifyEvent,OnBeforeRenameEvent|}', '', ${3|true,false|}, ${4|true,false|})]",
+            "local procedure RunTable${1:ObjectName}${2:MyProcedure}(VAR Rec: Record ${1:ObjectName}; VAR xRec: Record ${1:ObjectName}; RunTrigger: Boolean)",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Event Subscriber for Table (modify or rename)"
+    },
+    "Snippet: Event Subscriber for Field": {
+        "prefix": "teventsubtablefield",
+        "body": [
+            "[EventSubscriber(ObjectType::Table, DATABASE::${1:ObjectName}, '${2|OnAfterValidateEvent,OnBeforeValidateEvent|}', '${3:FieldName}', ${4|true,false|}, ${5|true,false|})]",
+            "local procedure RunTable${1:ObjectName}${2:MyProcedure}${3:FieldName}(VAR Rec: Record ${1:ObjectName}; VAR xRec: Record ${1:ObjectName}; CurrFieldNo: Integer)",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Event Subscriber for Validate Field in Table"
+    },
+    "Snippet: Event Subscriber for Page": {
+        "prefix": "teventsubpageaction",
+        "body": [
+            "[EventSubscriber(ObjectType::Page, DATABASE::${1:ObjectName}, '${2|OnAfterActionEvent,OnAfterGetCurrRecordEvent,OnAfterGetRecordEvent,OnBeforeActionEvent,OnClosePageEvent,OnOpenPageEvent|}', '', ${3|true,false|}, ${4|true,false|})]",
+            "local procedure RunPage${1:ObjectName}${2:MyProcedure}(VAR Rec: Record ${1:ObjectName})",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Event Subscriber for Page (Action, on Open and Close, CurrRecord, GetRecord,"
+    }
+}
