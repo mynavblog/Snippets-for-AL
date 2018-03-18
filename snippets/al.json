@@ -1,0 +1,126 @@
+{
+    "Snippet: Trigger OnValidate": {
+        "prefix": "ttriggerOnValidate",
+        "body": [
+            "trigger OnValidate();",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Trigger OnValidate()"
+    },
+    "Snippet: Trigger OnLookup": {
+        "prefix": "ttriggerOnLookup",
+        "body": [
+            "trigger OnLookup();",
+            "begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: Trigger OnLookup()"
+    },
+    "Snippet: If not": {
+        "prefix": "tifnot",
+        "body": [
+            "if not ${1:BooleanExpression} then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If not"
+    },
+    "Snippet: If not Else": {
+        "prefix": "tifnotelse",
+        "body": [
+            "if not ${1:BooleanExpression} then begin",
+            "\t${2}",
+            "end else begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If not Else"
+    },
+    "Snippet: If rec <> xrec": {
+        "prefix": "tifRecxRec",
+        "body": [
+            "if Rec.${1:FieldName} <> xRec.${1:FieldName} then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If Rec.field <> xRec.field"
+    },
+    "Snippet: If rec <> xrec and xrec empty": {
+        "prefix": "tifRecxRecempty",
+        "body": [
+            "if (Rec.${1:FieldName} <> xRec.${1:FieldName}) and (xRec.${1:FieldName} <> '') then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If rec.field <> xrec.field and xrec.field <> ''"
+    },
+    "Snippet: Repeat Until Next": {
+        "prefix": "trepeatnext",
+        "body": [
+            "repeat begin",
+            "\t$0",
+            "end until ${1:RecordName}.Next = 0;"
+        ],
+        "description": "Snippet: Repeat Until Next"
+    },
+    "Snippet: If Table not Empty Else": {
+        "prefix": "tnotisemptyelse",
+        "body": [
+            "if not ${1:Rec}.IsEmpty then begin",
+            "\t${2}",
+            "end else begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If Table not Empty Else"
+    },
+    "Snippet: If Table Empty": {
+        "prefix": "tnotisempty",
+        "body": [
+            "if not ${1:Rec}.IsEmpty then begin",
+            "\t$0",
+            "end;"
+        ],
+        "description": "Snippet: If Table not Empty"
+    },
+    "Snippet: Flowfield": {
+        "prefix": "tflowfield",
+        "body": [
+            "field(${1:id}; ${2:MyField}; ${3:Type})",
+            "{",
+            "\tCaption = '${2:Myfield}';",
+            "\tFieldClass = FlowField;",
+            "\tCalcFormula = ${4|sum,avarage,exist,count,min,max,lookup|}(${5:TableName}.${6:FieldName} WHERE (${7:WhereStatement}));",
+            "\tEditable = false;",
+            "\t$0",
+            "}"
+        ],
+        "description": "Snippet: FlowField"
+    },
+    "Snippet: Field Code with Table relation": {
+        "prefix": "tfieldcodetabrel",
+        "body": [
+            "field(${1:id}; ${2:MyField}; Code[${3:10}])",
+            "{",
+            "\tCaption = '${2:Myfield}';",
+            "\tTableRelation = ${4:TableRelation};",
+            "\t$0",
+            "}"
+        ],
+        "description": "Snippet: Field type Code with table relation"
+    },
+    "Snippet: Field Page with ToolTip": {
+        "prefix": "tfieldpagetooltip",
+        "body": [
+            "field(${1:Myfield})",
+            "{",
+            "\tToolTip = '${2:ToolTipText}';",
+            "\t$0",
+            "}"
+        ],
+        "description": "Snippet: Field on Page with ToolTip"
+    }
+}

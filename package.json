@@ -1,0 +1,33 @@
+{
+    "name": "al-snippets",
+    "displayName": "AL Snippets",
+    "description": "The myNAVblog extension for AL with custom Snippets ",
+    "version": "0.0.2",
+    "publisher": "mynavblog-kbialowas",
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    
+    "contributes": {
+        "snippets": [
+            {
+                "language": "al",
+                "path": "./snippets/al.json"                
+            }
+        ]
+    },
+    "icon": "images/icon.png",
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "bugs": {
+        "url": "https://github.com/mynavblog/Snippets-for-AL/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mynavblog/Snippets-for-AL"
+    },
+    "homepage": "https://github.com/mynavblog/Snippets-for-AL"
+    
+}
