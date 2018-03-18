@@ -3,14 +3,6 @@ Here you can find custom Snippets for AL. Extension for VS Code can be downloade
 
 Currently there are below Snippets 
 
-# Table Events:
-teventsubtableinsdel,
-teventsubtablemodren,
-teventsubtablefield
-
-# Paga Events: 
-teventsubpageaction
-
 # Triggers:
 ttriggerOnValidate,
 ttriggerOnLookup
